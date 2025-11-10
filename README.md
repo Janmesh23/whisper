@@ -1,52 +1,6 @@
 ![architecture](image.png)
 
 
-flowchart TD
-
-%% STYLE DEFINITIONS
-classDef title fill:#1E293B,stroke:#0EA5E9,color:#fff,font-weight:bold;
-classDef box fill:#F8FAFC,stroke:#CBD5E1,stroke-width:1px,color:#1E293B;
-classDef external fill:#F1F5F9,stroke:#CBD5E1,color:#334155,stroke-dasharray:3 3;
-
-%% NODES
-A[Frontend (Next.js)]:::box
-B[Backend API (Node.js / Express)]:::box
-C[Solana Program (Anchor, Devnet)]:::box
-D[IPFS + Pinata]:::external
-E[(User Wallet - Phantom / Solflare)]:::external
-F[(Solana RPC Node)]:::external
-
-%% TITLES
-subgraph Frontend Layer
-A
-end
-
-subgraph Off-chain Layer
-B
-D
-end
-
-subgraph On-chain Layer
-C
-F
-end
-
-%% CONNECTIONS
-E -->|Connect Wallet| A
-A -->|Submit confession (text/image)| B
-B -->|Upload content| D
-D -->|Return CID| B
-B -->|Create Confession Tx (with CID)| A
-A -->|Anchor Instruction: create_confession| C
-C -->|Store Confession Metadata (author, timestamp, ipfs_uri)| F
-A -->|Fetch Confessions via RPC|getConfessions
-F -->|Return Confession Accounts| A
-A -->|Resolve CID → Fetch content from IPFS| D
-
-%% LABELS
-class A,B,C,D,E,F box;
-
-
 ## 🧱 1. Frontend (Next.js + Wallet Integration)
 
 **Purpose:**  
