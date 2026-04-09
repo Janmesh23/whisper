@@ -1,12 +1,12 @@
-# 🤫 Whisper: Decentralized Confessions
+# Whisper: Decentralized Confessions
 
 Whisper is a decentralized confession platform built on **Solana** and **Arweave (Irys)**. Users can post secrets, secrets, and confessions anonymously to the blockchain, like other confessions, and engage in a truly censorship-resistant social feed.
 
-This project is the official repository for the **FOSS Weekend** contributor event! 🚀
+This project is the official repository for the **FOSS Weekend** contributor event!
 
 ![architecture](image.png)
 
-## 🏗 High-Level Architecture
+## High-Level Architecture
 
 - **Blockchain Layer**: Solana (Anchor Framework) stores confession metadata and reaction counts.
 - **Storage Layer**: Arweave (via Irys) stores the actual confession content (text/images).
@@ -14,7 +14,7 @@ This project is the official repository for the **FOSS Weekend** contributor eve
 
 ---
 
-## ⚙️ 1. Prerequisites (Setup your Environment)
+## 1. Prerequisites (Setup your Environment)
 
 Before you can contribute, you need to set up your Solana development environment. Follow these steps carefully:
 
@@ -45,7 +45,7 @@ Ensure you have Node.js (v18+) installed. We recommend using `nvm`.
 
 ---
 
-## 🛠 2. Local Development Setup
+## 2. Local Development Setup
 
 1. **Clone the Repo**:
    ```bash
@@ -73,11 +73,11 @@ Ensure you have Node.js (v18+) installed. We recommend using `nvm`.
 
 ---
 
-## 🗺 3. FOSS Weekend Roadmap (Issues to Solve)
+## 3. FOSS Weekend Roadmap (Issues to Solve)
 
 We've prepared several issues for you to tackle! Look for `TODO` comments in `whisper/programs/whisper/src/lib.rs` for program tasks.
 
-### 🟢 Beginner (Good First Issues)
+### Beginner (Good First Issues)
 1. **`delete_confession`**: Implement the instruction to close an account and reclaim rent.
 2. **`dislike_confession`**: Add logic to decrement `like_count`.
 3. **URL Validation**: Use `require!` to ensure `content_uri` starts with `https://`.
@@ -85,7 +85,7 @@ We've prepared several issues for you to tackle! Look for `TODO` comments in `wh
 5. **Categorization**: Add a `tag` field (e.g., "Love", "Regret") to the confession account.
 6. **Error Testing**: Expand the test suite to cover all `WhisperError` cases.
 
-### 🟡 Medium (The Challenge)
+### Medium (The Challenge)
 7. **Multi-Confession Support**: Fix the PDA seeds using a `UserCounter` account to allow >1 confession per user.
 8. **Time-Limited Edits**: Implement `edit_confession` but only allow it within 10 minutes of posting.
 9. **Tipping System**: Add `tip_author` instruction to transfer SOL via CPI.
@@ -95,7 +95,7 @@ We've prepared several issues for you to tackle! Look for `TODO` comments in `wh
 
 ---
 
-## 🤝 Contribution Guidelines
+## Contribution Guidelines
 
 Please read our [CONTRIBUTING.md](./CONTRIBUTING.md) before submitting your first Pull Request.
 
